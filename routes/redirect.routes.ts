@@ -2,7 +2,7 @@ const { Router } = require("express")
 const Link = require("../models/Link")
 const router = Router()
 
-router.get("/:code", async (req, res) => {
+router.get("/:code",  => {
     try {
       
     const link = await Link.findOne({ code: req.params.code })

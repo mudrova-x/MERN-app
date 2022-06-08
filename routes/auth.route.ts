@@ -14,7 +14,7 @@ router.post(
         check('password', 'failed password - length')
         .isLength({min:6})
     ],
-    async (req, res) => {
+    async (req:any, res:any) => {
   try {
 const errors = validationResult(req)
 
@@ -36,7 +36,7 @@ if (!errors.isEmpty()){
     await user.save()
 
     res.status(201).json({ message: 'Пользователь создан' })
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({ message: "smth gone wrong in registration, try again" });
     console.log(error.message)
   }
@@ -49,7 +49,7 @@ router.post(
     check('email', 'Введите корректный email').normalizeEmail().isEmail(),
     check('password', 'Введите пароль').exists()
   ],
-  async (req, res) => {
+  async (req:any, res:any) => {
   try {
     const errors = validationResult(req)
 

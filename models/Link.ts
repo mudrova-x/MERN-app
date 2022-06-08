@@ -1,6 +1,7 @@
-const {Schema, model, Types} = require('mongoose')
+//const {Schema, model, Types} = require('mongoose')
+import { Schema, model, Types } from 'mongoose';
 
-const schema = new Schema({
+const schema: any = new Schema({
   from: {type: String, required: true},
   to: {type: String, required: true, unique: true},
   code: {type: String, required: true, unique: true},

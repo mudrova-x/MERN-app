@@ -1,15 +1,15 @@
 //генерация ссылок для сокращения - функционал
 
-const { Router } = require('express')
-const config = require('config')
+//const { Router } = require('express')
+//const config = require('config')
 const Link = require('../models/Link')
 const auth = require('../milddleware/auth.middleware')
-const router = Router()
+//const router = Router()
 const shortid = require('shortid')
 
 
 
-router.post('/generate', auth, async (req, res) => {
+router.post('/generate', auth, async (req:any, res:any) => {
     try {
       //генерация ссылки
     const baseUrl = config.get('baseUrl')
@@ -39,7 +39,7 @@ router.post('/generate', auth, async (req, res) => {
   }
 })
 
-router.get('/', auth, async (req, res) => {
+router.get('/', auth, async (req:any, res:any) => {
     try {
        // поиск по owner всех ссылок
     const links = await Link.find({ owner: req.user.userId })
@@ -49,7 +49,7 @@ router.get('/', auth, async (req, res) => {
   }
 })
 
-router.get('/:id', auth, async (req, res) => {
+router.get('/:id', auth, async (req:any, res:any) => {
     try {
       // поиск по айдишнику
     const link = await Link.findById(req.params.id)
