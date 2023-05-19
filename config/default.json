@@ -1,6 +1,6 @@
 {
     "port":5000,
-    "mongoUri":"mongodb+srv://admin:admin@cluster0.1mybb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongoUri":"mongodb+srv://admin:admin@cluster0.1",
     "jwtSecret": "smthForSign",
     "baseUrl": "http://localhost:5000"
 }
